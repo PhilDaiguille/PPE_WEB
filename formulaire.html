@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <meta name="description" content="Streaming">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href=".assets/site.webmanifest">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="./accueil.html"><img src="./assets/filmstrip_film_movie_camera_reel_icon_209544.png" alt="streaming"></a>
+        <h1>Films, séries TV et bien plus en illimité.</h1>
+            <ul>
+                <li aria-hidden="true">
+                    <span class="material-icons">
+                        visibility
+                    </span>
+                </li>
+                <li aria-hidden="true">
+                    <span class="material-icons">
+                        light_mode
+                    </span>
+                </li>
+            </ul>
+    </header>
+    <main>
+        <section>
+            <ul class="grid-picture-large" aria-hidden="true">
+                <li data-image="./assets/Scarface.jpg" data-title="Scarface"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/Scarface.jpg" alt="Scarface" />
+                        <figcaption>
+                            <h2>
+                                <span class="material-icons" aria-hidden="true">
+                                    pages
+                                </span>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/PulpFiction.jpg" data-title="Pulp Fiction"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/PulpFiction.jpg" alt="PulpFiction" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/LeParrain.jpg" data-title="Le Parrain"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/LeParrain.jpg" alt="LeParrain" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/Jaws.jpg" data-title="Jaws"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/Jaws.jpg" alt="Jaws" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+                <li data-image="./assets/BladeRunner.jpg" data-title="Blade Runner"
+                    data-description="c'est un film épatant, entre action et émotion..." data-dates="02/01/1983">
+                    <figure>
+                        <img src="./assets/BladeRunner.jpg" alt="BladeRunner" />
+                        <figcaption>
+                            <h2>
+                                <i class="material-icons" aria-hidden="true">
+                                    pages
+                                </i>
+                                Agrandir
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        <p id="warning"></p>
+        <fieldset>
+            <legend>Remplissez le formulaire</legend>
+            <form method="get">
+                <label for="nom">nom</label>
+                <input type="text" id="nom" name="nom" placeholder="nom" aria-required="true" autofocus>
+                <label for="prenom">prénom</label>
+                <input type="text" id="prenom" name="prenom" placeholder="prénom" aria-required="true" >
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="email" aria-required="true" >
+                <label for="ville">ville</label>
+                <select name="ville" id="ville" aria-required="true" >
+                    <option value="">- Choisissez la ville -</option>
+                    <option value="paris">Paris</option>
+                    <option value="lyon">Lyon</option>
+                    <option value="marseille">Marseille</option>
+                    <option value="toulouse">Toulouse</option>
+                    <option value="nantes">Nantes</option>
+                    <option value="strasbourg">Strasbourg</option>
+                    <option value="bordeaux">Bordeaux</option>
+                    <option value="lille">Lille</option>
+                    <option value="rennes">Rennes</option>
+                </select>
+                <label for="pays">Pays</label>
+                <select name="pays" id="pays" aria-required="true" >
+                    <option value="">- Choisissez le pays -</option>
+                    <option value="France">France</option>
+                    <option value="Espagne">Espagne</option>
+                    <option value="Italie">Italie</option>
+                    <option value="Allemagne">Allemagne</option>
+                    <option value="Portugal">Portugal</option>
+                </select>
+                <input type="submit" value="Valider">
+            </form>
+        </fieldset>
+        
+       
+        <!-- modale -->
+        <div class="parent-modale" role="dialog" aria-label="true">
+            <figure class="modale">
+                <button aria-label="closed">
+                    <span class="material-icons">clear</span>
+                </button>
+                <img src="https://via.placeholder.com/500" alt="picture" />
+                <figcaption class="desc">
+                    <h3>title</h3>
+                    <p> </p>
+                    <time datetime="2022-03-20">Years : </time>
+                </figcaption>
+            </figure>
+        </div>
+
+    </main>
+    <footer>
+        <div class="caté">
+            <img src="./assets/popcorn.png" alt="Popcorn">
+            <section>
+                <h2>Année</h2>
+                <ul>
+                    <li><a href="#">Année 2000</a></li>
+                    <li><a href="#">Année 1990</a></li>    
+                    <li><a href="#">Année 1980</a></li>
+                    <li><a href="#">Année 1970</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Genre</h2>
+                <ul>
+                    <li><a href="#">Drame</a></li>
+                    <li><a href="#">Science-fiction</a></li>
+                    <li><a href="#">Comédie</a></li>
+                    <li><a href="#">Action</a></li>
+                </ul>
+            </section>
+            <section>
+                <h2>Contact</h2>
+                <ul>
+                    <li><a href="#">Mail</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Assistance</a></li>
+                </ul>
+            </section>
+        </div>
+        <p>
+            &copy; Streaming | Tous droits réservés - Philippe DELENTE | 
+        </p>
+    </footer>
+    <script src="./js/formulaire.js"></script>
+</body>
+</html>

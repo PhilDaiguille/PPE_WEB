@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;300;400;500;700;900&display=swap');
+/* RESET 2022 */
+html{
+	font-size:62.5%;
+	scroll-behavior:smooth;
+}
+body{
+	font: 1.6rem 'Encode Sans', sans-serif;
+	margin:0;
+	background-color: var(--default);
+	font-weight: 500;
+}
+section,figure,h1,h2,h3,h4,h5,h6,ol,p,ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+*{ 
+	box-sizing:border-box;
+}
+button,input,select{
+	padding:0;
+	border:0;
+	background-color:transparent;
+	font-size: inherit;
+}
+img{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	vertical-align: middle;
+}
+select, input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+/* HEADER */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	background-color: #111;
+	border-bottom: solid .3rem #000;
+	padding: 2rem;
+	
+}
+header h1{
+    padding: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+	border-radius: 1rem;
+	background-color: var(--secondary);
+}
+header ul{
+	display: inline-block;
+	margin: 0 2rem; 
+	background-color: var(--white);
+	border: solid .2rem var(--tertiare);
+	border-radius: 2rem;
+	padding: 1rem;
+}
+
+header ul li{
+	margin: 0.5rem;
+	cursor: pointer;
+}
+
+
+header img{
+	display: block;
+	transform: translateX(-3rem);
+	max-width: 10rem;
+}
+/* COLORS */
+:root{
+	--default: #222;
+	--white: #fff;
+	--primary: #111;
+	--secondary: #c0392b;
+	--tertiare: #a72b1d;
+}
+/* scroll bars */
+*{
+    /* For FF and non-webkit browsers */
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255, 255, 255) #333;
+}
+*::-webkit-scrollbar {
+    width: .4rem;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #222;
+    outline: .2rem solid rgb(255, 255, 255);
+}
+/* LOADED */
+
+/*ACCESSIBILITY*/
+.accessibility{
+	filter: contrast(1.5) grayscale(90%);
+}
+.light{
+	background-color: #fafafa;
+}
+.light main section ul li img{
+	display: block;
+	margin: 0rem auto;
+	border-radius: .5rem;
+	border: solid .2rem var(--default);
+	box-shadow: .1rem .1rem .8rem var(--default);
+}
+.light header ul{
+	margin: 0 2rem; 
+	background-color: var(--white);
+	border: solid .2rem var(--tertiare);
+	border-radius: 2rem;
+	padding: 1rem;
+}
+.light header{
+	background-color: #fefefe;
+	color: #000;
+	border-bottom: solid 0.3rem var(--default);
+}
+.light footer{
+	background-color: #fefefe;
+	color: #000;
+	border-top: solid 0.3rem var(--default);
+}
+.light header img{
+	filter: invert(1);
+}
+.light header{
+	box-shadow: 0rem 0rem 1rem var(--default);
+}
+.light footer{
+	box-shadow: 0 0 1rem var(--default);
+}
+.light footer section ul li a{
+	color: #000;
+}
+.light header ul li{
+	margin: 0.5rem;
+}
+.light h2{
+	color: var(--default);
+}
+.light section ul figure figcaption h2{
+    color: #fff;
+}
+
+.light label{
+	display: block;
+	padding: 1rem 0rem;
+	text-shadow: none;
+	color: var(--default);
+	font-weight: bold;
+	font-size: 2rem;
+}
+.light input, .light select{
+	color: #222;
+	background-color: #fafafa;
+	
+}
+.light img{
+	border-radius: .5rem;
+
+}
+.light legend{
+	display: block;
+	margin: 0 auto;
+	color: var(--default);
+	text-shadow:none;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.5rem;	
+}
+
+/*MAIN*/
+main{
+	margin: 0 auto;
+	max-width: 90rem;
+}
+main section{
+	max-width: 90rem;
+	margin: 2rem auto;
+}
+main section h2{
+	text-align: center;
+	padding: 2rem;
+	color: var(--white);
+}
+main section p{
+	text-align: center;
+	padding: 2rem;
+	border: solid .2rem var(--secondary);
+	margin: 2rem auto;
+	background-color: var(--white);
+	border-radius: .5rem;
+}
+main nav{
+	max-width: 90rem;
+	margin: 2rem auto;
+}
+main .success{
+	background-color: rgb(26, 124, 26);
+	border: solid .2rem var(--default);
+	padding: 2rem;
+	color: #fff;
+	border-radius: .5rem;
+	text-align: center;
+}
+main .error{
+	background-color: rgb(170, 17, 30);
+	border: solid .2rem var(--default);
+	padding: 2rem;
+	color: #fff;
+	border-radius: .5rem;
+	text-align: center;
+}
+main section ul, main nav ul{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1rem;
+	border-radius: .5rem;
+}
+main section ul li img,main nav ul li img{
+	display: block;
+	margin: 0rem auto;
+	border-radius: 0.3rem;
+	border: solid .2rem var(--white);
+	transition: all .3s ease-in-out;
+}
+main section a{
+	display: block;
+	margin: 3rem auto;
+	padding: 2rem;
+	border-radius: .5rem;
+	text-align: center;
+	background-color: var(--tertiare);
+	max-width: 40rem;
+	color: #fff;
+	font-weight: bolder;
+}
+form *{
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: .9rem;
+	text-transform: capitalize;
+}
+fieldset{
+	border: none;
+	margin: 2rem auto;
+	padding: 2rem 0;
+}
+form label{
+	display: block;
+	padding: 1rem 0rem;
+	color: var(--white);
+	text-shadow: var(--secondary) .25rem .25rem 0rem;
+	font-weight: bold;
+	font-size: 2rem;
+}
+fieldset legend{
+	display: block;
+	margin: 0 auto;
+	color: var(--white);
+	text-shadow: var(--secondary) .25rem .25rem 0, var(--tertiare) .5rem .5rem 0;
+	text-align: center;
+	font-weight: bold;
+	font-size: 2.5rem;	
+}
+form input[type="submit"]{
+	display: block;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	border-radius: .5rem;
+	text-align: center;
+	background-color: var(--tertiare);
+	width: 100%;
+	color: var(--white);
+	cursor: pointer;
+	font-weight: bolder;
+}
+form input:focus, form select:focus{
+	box-shadow: 0 0 .7rem var(--tertiare);
+	border: solid .2rem var(--tertiare);
+	outline: none;
+}
+form input{
+	display: block;
+	border-radius: .5rem;
+	padding: 1rem 0.5rem;
+	color: #f0efef;
+	background-color: #333;
+	border: solid .2rem var(--default);
+}
+form select{
+	display: block;
+	height: 100%;
+	width: 100%;
+	padding: 1rem 0.5rem;
+	border-radius: .5rem;
+	color: #cccccc;
+	background-color: #333;
+	border: solid .2rem var(--default);
+}
+form select option{
+	display: block;
+	padding: 1rem 0rem;
+	border-radius: .5rem;
+}
+[placeholder]{
+    text-transform: capitalize;
+}
+
+/*MODALE*/
+main .grid-picture-large{
+    display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 1rem;
+	max-width: 90rem;
+	border-radius: .5rem;
+}
+ul figure{
+    position: relative;
+	height: 32vh;
+}
+ul figure .material-icons{
+    vertical-align: -.4rem;
+}
+/* Overley effect */
+section ul figure figcaption{
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.6);
+	border: solid .2rem #000;
+    align-items: center;
+    transform: scale(0);
+    transition: all 500ms ease-in-out;
+    transform-origin: center center;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+}
+section ul figure:hover figcaption{
+    transform: scale(1);
+}
+.parent-modale{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.4s ease-in-out;
+}
+.parent-modale .modale{
+    max-width: 90rem;
+    padding: 1rem;
+	margin: 0 auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+	border-radius: .5rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.6);
+    z-index: 2;
+    cursor: pointer;
+    
+    
+}
+.parent-modale .modale .desc{
+    position: static;
+    transition: none;
+	transform: none;
+	width: 100%;
+    background-color: #fff;
+    color: #222;
+    
+}
+.modale-active{
+    z-index: 1;
+    opacity: 1;
+    transform-origin: center center;
+}
+.parent-modale .modale .desc h3{
+	font-size: 2rem;
+	border-radius: 0 0 .5rem .5rem;
+    font-weight: 400;
+    background-color: #222;
+    color: #fff;
+    padding: 1rem;
+}
+.parent-modale .modale img{
+	width: 100%;
+	max-height: 80vh;
+	border-radius: .5rem .5rem 0 0;
+}
+.parent-modale .modale .desc p, .parent-modale .modale .desc time{
+    padding: 1rem;
+	border-radius: .5rem;
+}
+.parent-modale .modale button{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    z-index: 2;
+	border: solid .2rem #000;
+	background-color: #fff;
+    color: #111;
+	border-radius: .5rem;
+    cursor: pointer;
+}
+.parent-modale .modale button .material-icons{
+	vertical-align: -.4rem;
+}
+
+
+
+
+/* FOOTER */
+
+
+footer{
+	border-top: solid .3rem #000;
+    background-color: #111;
+    color: #fff;
+}
+footer p{
+	text-align: center;
+	padding: 1rem;
+	letter-spacing: 0.082em;
+	font-weight: 900;
+}
+.caté{
+    display: grid;
+    grid-template-columns: repeat(4 ,1fr);
+    padding: 3rem;
+}
+.caté img{
+	max-width: 20rem;
+	display: flex;
+	height: auto;
+	width: auto;
+	padding-top: 3rem;
+	display: inline-block;
+	vertical-align: center;
+    margin: 0 auto;
+}
+.caté section{
+	display: inline-block;
+	vertical-align: center;
+	padding: 3rem;
+}
+.caté h2{
+	padding-top: 2rem;
+    font-weight: 800;
+}
+.caté section ul{
+    width: 100%;
+    margin: 3rem auto;
+	align-items: center;
+}
+.caté section ul li{
+    padding-bottom: 1rem;
+}
+.caté section ul li:hover{
+	text-decoration: underline;
+}
+.caté section ul li a{
+    color: rgba(255, 255, 255, 0.699);
+    padding-bottom: 1rem;
+    font-style: italic;
+}
+
+@media screen and (max-width: 60rem){
+	header{
+		display: block;
+	}
+	Header h1{
+		font-size: 2.5rem;
+	}
+	header img{
+		display: block;
+		margin: 0 auto;
+		transform: none;
+		max-width: 10rem;
+	}
+    header ul{
+        display: flex;
+		max-width: 10rem;
+        z-index: 1;
+		margin: 0.5rem auto;
+        background-color: var(--white);
+        border: solid .2rem var(--tertiare);
+        border-radius: 2rem;
+        padding: 1rem;
+    }
+	header ul li{
+		margin: 0 auto;
+	}
+	header nav{
+		position: absolute;
+		top: 2%;
+		left: 82%;
+	}
+	main, header{
+		padding: 1rem;
+	}
+	.light header ul{
+		display: flex;
+		max-width: 10rem;
+		z-index: 1;
+		margin: 0.5rem auto;
+		background-color: var(--white);
+		border: solid .2rem var(--tertiare);
+		border-radius: 2rem;
+		padding: 1rem;
+	}
+	.light header ul li{
+		margin: 0 auto;
+	}
+	main section .grid-picture-large{
+		display: grid;
+		grid-template-columns: repeat(2, 2fr);
+	}
+	footer .caté{
+        padding: 1rem;
+		grid-template-columns: repeat(1, 1fr);
+    }
+	footer img{
+		max-width: 10rem;
+	}
+	footer .caté section{
+		padding: 0rem;
+	}
+	footer .caté{
+		text-align: center;
+	}
+
+}
+	
