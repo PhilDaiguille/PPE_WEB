@@ -2,4 +2,4 @@
 
 ## Philippe DELENTE
 
-[Voir le lien du site]()
+[Voir le lien du site](https://phildaiguille.github.io/PPE_WEB/accueil.html)
