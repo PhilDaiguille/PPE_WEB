@@ -65,7 +65,7 @@ header ul{
 	display: inline-block;
 	margin: 0 2rem; 
 	background-color: var(--white);
-	border: solid .2rem var(--tertiare);
+	border: solid .3rem var(--tertiare);
 	border-radius: 2rem;
 	padding: 1rem;
 }
