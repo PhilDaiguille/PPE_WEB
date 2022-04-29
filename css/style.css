@@ -74,12 +74,23 @@ header ul li{
 	margin: 0.5rem;
 	cursor: pointer;
 }
-
+header h2{
+	display: block;
+	color: #fff;
+}
 
 header img{
 	display: block;
 	transform: translateX(-3rem);
 	max-width: 10rem;
+}
+header #connexion{
+	position: absolute;
+	display: inline-block;
+	filter: invert(1);
+	top: 2%;
+	right: 1%;
+	font-size: 5rem;
 }
 /* COLORS */
 :root{
@@ -204,8 +215,15 @@ main section p{
 	border-radius: .5rem;
 }
 main nav{
-	max-width: 100rem;
+	max-width: 120rem;	
 	margin: 2rem auto;
+}
+main .confirm{
+	border: solid .2rem var(--default);
+	padding: 2rem;
+	color: #fff;
+	border-radius: .5rem;
+	text-align: center;
 }
 main .success{
 	background-color: rgb(26, 124, 26);
@@ -222,6 +240,48 @@ main .error{
 	color: #fff;
 	border-radius: .5rem;
 	text-align: center;
+}
+main .userInfo{
+	display: block;
+	border-radius: .5rem;
+	padding: 1rem;
+	background-color: #333;
+}
+main .userInfo ul{
+	display: block;
+}
+main .userInfo a{
+	display: inline-block;
+	color: #000;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: .5rem;
+	border: solid .3rem var(--secondary);
+	margin: 1rem auto;
+	max-width: 50rem;
+	background-color: #fafafa;
+
+}
+main .userInfo h2{
+	border: solid .2rem #000;
+	padding: 1rem;
+	border-radius: .5rem;
+	color: #000;
+	margin: 1rem auto;
+	max-width: 40rem;
+	background-color: #fafafa;
+}
+main .userInfo ul li{
+	display: block;
+	color: #fff;
+	padding: 2rem;
+	border-radius: .5rem;
+	background-color: #555;
+	margin: .5rem auto;
+}
+main .userInfo ul li:nth-child(2n + 1){
+	background-color: #444;
+	border-radius: .5rem;
 }
 main section ul, main nav ul{
 	display: grid;
@@ -255,9 +315,11 @@ form *{
 	text-transform: capitalize;
 }
 fieldset{
-	border: none;
+
+	border-radius: .5rem;
+	box-shadow: rgba(0, 0, 0, 0.636) 0 0 3rem;
 	margin: 2rem auto;
-	padding: 2rem 0;
+	padding: 3rem;
 }
 form label{
 	display: block;
@@ -319,7 +381,27 @@ form select option{
 [placeholder]{
     text-transform: capitalize;
 }
-
+main fieldset ul{
+	color: #fff;
+	text-align: center;
+}
+main fieldset ul li{
+	text-align: center;
+	display: inline-block;
+	margin: 0 2rem;
+	vertical-align: middle;
+}
+main fieldset ul li a{
+	display: block;
+	color: rgb(224, 224, 224);
+}
+.titleco{
+	font-size: 5rem;
+	text-shadow: var(--secondary) .25rem .25rem 0rem;
+}
+.inscrire{
+	color: #1e3799;
+}
 /*MODALE*/
 main .grid-picture-large{
     display: grid;
@@ -331,7 +413,7 @@ main .grid-picture-large{
 }
 ul figure{
     position: relative;
-	height: 25rem;
+	height: 35vh;
 }
 ul figure .material-icons{
     vertical-align: -.4rem;
@@ -407,9 +489,18 @@ section ul figure:hover figcaption{
     color: #fff;
     padding: 1rem;
 }
+.parent-modale .modale .desc a{
+	display: block;
+	margin: 1rem auto;
+	padding: 1rem;
+	border-radius: .5rem;
+	color: #fff;
+	text-align: center;
+	background-color: var(--secondary);
+}
 .parent-modale .modale img{
-	width: 100%;
-	max-height: 80vh;
+	max-width: 50vw;
+	max-height: 60vh;
 	border-radius: .5rem .5rem 0 0;
 }
 .parent-modale .modale .desc p, .parent-modale .modale .desc time{
