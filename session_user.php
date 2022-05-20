@@ -10,7 +10,7 @@ include_once "./page/header_inc.php";
 
 <body>
     <header>
-        <a href="./accueil.php"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
+        <a href="./Accueil_membre.php"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
         <h1>Maison des ligues - tous les sports</h1>
         <ul>
             <li aria-hidden="true">
@@ -24,20 +24,28 @@ include_once "./page/header_inc.php";
     <main>
         <section>
             <h2 class=".confirm">
-                Bonjour <?= $_SESSION["nom"] ?>
+                Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?>
             </h2>
         </section>
         <section class="userInfo">
             <h2>Information</h2>
             <?php include_once "./page/user_inc.php" ?>
-            <a href="#">Changer le profil</a>
+            <a href="./ModifUser.php">Changer le profil</a>
             <a href="#">Voir l'historique des évenements</a>
+        
+            <input type="submit" id="delete "name="delete "class="button" value="Supprimer ce profil">
+        
+            <?php 
+                if (isset($_POST['delete'])) {
+                    echo "oui";
+                }
+            
+            ?>
         </section>
         <form action="./accueil.php">
             <input type="submit" value="Deconnexion" />
         </form>
         
     </main>
-</body>
-
-</html>
+ 
+<?php include_once "./page/footer_user_inc.php" ?>

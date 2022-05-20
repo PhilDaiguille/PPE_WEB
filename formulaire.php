@@ -27,9 +27,9 @@ include_once("./page/header_inc.php");
                 try {
                     // On récupère tout le contenu de la table recipes
                     $request = "SELECT * FROM `evenement` WHERE 5 >= `id_event`";
-                    $recipesStatement = $_bdd->prepare($request);
-                    $recipesStatement->execute();
-                    $evenement = $recipesStatement->fetchAll();
+                    $sport = $_bdd->prepare($request);
+                    $sport->execute();
+                    $evenement = $sport->fetchAll();
 
                     // On affiche chaque recette une à une
                     foreach ($evenement as $event) {
@@ -55,7 +55,9 @@ include_once("./page/header_inc.php");
                 
             </ul>
         </section>
-        <?php include_once("./page/connect_BDD.php") ?>
+        <?php include_once("./page/connect_BDD.php");
+            include_once("./page/main_form_inc.php");
+        ?>
         <p id="warning"></p>
         <fieldset>
             <legend>Remplissez le formulaire</legend>
@@ -65,9 +67,24 @@ include_once("./page/header_inc.php");
                 <label for="prenom">prénom</label>
                 <input type="text" id="prenom" name="prenom" placeholder="prénom" aria-required="true" required>
                 <label for="age">age</label>
-                <input type="number" id="age" name="age" placeholder="age" aria-required="true" required>
+                <input type="number" id="age" name="age" placeholder="age" aria-required="true" required>  
+                <label for="ville">Ville</label>
+                <select name="ville" id="ville" aria-required="true" required>
+                    <option value="">- Choisissez la ville -</option>
+                    <option value="paris">Paris</option>
+                    <option value="lyon">Lyon</option>
+                    <option value="marseille">Marseille</option>
+                    <option value="toulouse">Toulouse</option>
+                    <option value="nantes">Nantes</option>
+                    <option value="strasbourg">Strasbourg</option>
+                    <option value="bordeaux">Bordeaux</option>
+                    <option value="lille">Lille</option>
+                    <option value="rennes">Rennes</option>
+                </select>
                 <label for="email">email</label>
                 <input type="email" id="email" name="email" placeholder="email" aria-required="true" required>
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" placeholder="password" aria-required="true" required>
                 <input type="submit" value="Valider">
             </form>
         </fieldset>

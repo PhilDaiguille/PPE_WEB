@@ -29,7 +29,7 @@
             </ul>
         </section>
     </div>
-    <p> &copy; Streaming | Tous droits réservés - Philippe DELENTE | </p>
+    <p> &copy; Maison Ligues | Tous droits réservés - Philippe DELENTE | </p>
 
 </footer>
 <script src="./js/formulaire.js"></script>

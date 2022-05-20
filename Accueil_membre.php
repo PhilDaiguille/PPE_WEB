@@ -1,12 +1,8 @@
 <?php
-//sessions
-session_start(); //démarrage de la session
-session_destroy();
-if (session_status() == PHP_SESSION_ACTIVE && isset($_SESSION['email']))
-{
-    session_destroy();
-}
 
+/* Starting a session. */
+session_start();
+$_years = date("Y");
 ?>
 
 <?php
@@ -15,7 +11,7 @@ include_once("./page/header_inc.php");
 
 <body>
     <header>
-        <a href="./accueil.php"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
+        <a href="./Accueil_membre.php"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
         <h1>Maison des ligues - tous les sports</h1>
         <ul>
             <li aria-hidden="true">
@@ -25,26 +21,30 @@ include_once("./page/header_inc.php");
                 <span class="material-icons"> light_mode </span>
             </li>
         </ul>
-        <a href="./Connexion.php" class="connexion">
-            Connexion <span class="material-icons"> login </span>
+        <a href="./session_user.php" class="compte">
+            <span class="material-icons">
+                account_circle
+            </span>
+        </a>
+        <a href="./accueil.php" class="deconnexion">
+            Deconnexion <span class="material-icons"> logout </span>
         </a>
     </header>
     <main>
         <section>
             <h2>Prêt à la compétition ? Remplissez le formulaire proposé dans cette page</h2>
+            <h3 class="bonjour">Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?></h3>
             <p>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
             <ul class="grid-picture-large" aria-hidden="true">
                 <?php include_once "./page/connect_BDD.php" ?>
                 <?php
                 try {
-                    // On récupère tout le contenu de la table recipes
                     $request = "SELECT * FROM `evenement` ";
                     $sport = $_bdd->prepare($request);
                     $sport->execute();
                     $evenement = $sport->fetchAll();
 
-                    // On affiche chaque recette une à une
                     foreach ($evenement as $event) {
                         echo
                         '<li' . ' data-image=' . $event['image'] . ' data-title="' . $event['nom'] . '" ' 
@@ -53,7 +53,7 @@ include_once("./page/header_inc.php");
                         . '" >' 
                              . '<figure>' . '<img src=' . $event['image'] . ' alt=' . $event['nom'] . " />"
 
-                            . '<figcaption>' . '<h2>' . "En savoir" . '<span class="material-icons" aria-hidden="true"> ' . 'add' . '</span> ' . '</h2>' . '</figcaption>'
+                            . '<figcaption>' . '<h2>' . '<span class="material-icons" aria-hidden="true"> ' . 'add' . '</span> ' . "En savoir" . '</h2>' . '</figcaption>'
 
 
                             . '</figure>' .
@@ -67,7 +67,6 @@ include_once("./page/header_inc.php");
                 ?>
 
             </ul>
-            <a href="./formulaire.php">Cliquez ici pour commencer</a>
         </section>
 
         <!-- modale -->
@@ -84,6 +83,7 @@ include_once("./page/header_inc.php");
                     <a href="./Inscrire.php">S'inscrire à l'évenements</a>
                 </figcaption>
             </figure>
+            <p class="valid"></p>
         </div>
     </main>
     <?php

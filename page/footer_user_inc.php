@@ -32,7 +32,7 @@
     <p> &copy; Maison Ligues | Tous droits réservés - Philippe DELENTE | </p>
 
 </footer>
-<script src="./js/app.js"></script>
+
 </body>
 
 </html>

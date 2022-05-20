@@ -1,0 +1,45 @@
+CREATE TABLE `client` (
+  `id_client` int(16) NOT NULL,
+  `nom` varchar(42) DEFAULT NULL,
+  `prenom` varchar(42) DEFAULT NULL,
+  `age` varchar(42) DEFAULT NULL,
+  `email` varchar(42) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `ville` varchar(42) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `evenement` (
+  `id_event` int(16) NOT NULL,
+  `nom` varchar(42) DEFAULT NULL,
+  `description` varchar(42) DEFAULT NULL,
+  `date_creation` date DEFAULT current_timestamp(),
+  `date_modification` date DEFAULT current_timestamp(),
+  `image` varchar(42) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `historique_client` (
+  `id_client` int(16) NOT NULL,
+  `id_event` int(16) NOT NULL,
+  `date_modification` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `evenement`
+  ADD PRIMARY KEY (`id_event`);
+ALTER TABLE `client`
+ALTER TABLE `client`
+  MODIFY `id_client` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+  ADD PRIMARY KEY (`id_client`);
+ALTER TABLE `historique_client`
+  ADD PRIMARY KEY (`id_client`,`id_event`,`date_modification`),
+  ADD KEY `id_event` (`id_event`);
+ALTER TABLE `evenement`
+  MODIFY `id_event` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `client`
+  MODIFY `id_client` int(16) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `historique_client`
+  ADD CONSTRAINT `historique_client_ibfk_1` FOREIGN KEY (`id_event`) REFERENCES `evenement` (`id_event`),
+  ADD CONSTRAINT `historique_client_ibfk_2` FOREIGN KEY (`id_client`) REFERENCES `client` (`id_client`);
+COMMIT;
+

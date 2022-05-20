@@ -1,34 +1,32 @@
-<?php include_once("./page/connect_BDD.php") ?>
-<?php
+<?php include_once("./page/connect_BDD.php");
 
 try {
-    // On récupère tout le contenu de la table recipes
     $sqlQuery = 'SELECT * FROM client';
     $recipesStatement = $_bdd->prepare($sqlQuery);
     $recipesStatement->execute();
     $users = $recipesStatement->fetchAll();
-
-    // On affiche chaque recette une à une
-
-
+    
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
-?>
-<?php
+
+
 
 foreach ($users as $user) {
 
-    if ($user['email'] === $_SESSION['nom']) {
+    if ($user['id_client'] === $_SESSION['id']) {
+        $_SESSION['nom'] = $user['nom'];
+        $_SESSION['prenom'] = $user['prenom'];
+        $_SESSION['age'] = $user['age'];
+        $_SESSION['ville'] = $user['ville'];
+        $_SESSION['id'] = $user['id_client'];
         echo
         '<ul>' .
             '<li>' . "Nom : " . $user['nom'] . '</li>' .
-            '<li>' . "Prénom : " . $user['prenom'] . '</li>' .
+            '<li>' . "Prénom : " . $user['prenom'] . '</li>'.
             '<li>' . "Age : " . $user['age'] . '</li>' .
+            '<li>' . "Ville : " . $user['ville'] . '</li>'.
             '<li>' . "Email : " . $user['email'] . '</li>' .
             '</ul>';
     }
 }
-
-
-?>
