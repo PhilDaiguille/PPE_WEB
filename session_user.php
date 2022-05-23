@@ -32,15 +32,25 @@ include_once "./page/header_inc.php";
             <?php include_once "./page/user_inc.php" ?>
             <a href="./ModifUser.php">Changer le profil</a>
             <a href="#">Voir l'historique des évenements</a>
-        
-            <input type="submit" id="delete "name="delete "class="button" value="Supprimer ce profil">
-        
             <?php 
-                if (isset($_POST['delete'])) {
-                    echo "oui";
+                if (!empty($_POST)) {
+                    include_once "./page/SupprimerProfil.php";
+                    
+                    if($request){
+                        print "<p class=\"success\"> Votre compte a été supprimée</p>";
+                        session_destroy();
+                        sleep(3);
+                        header("Location: ./Accueil.php");
+                    }
+                    
                 }
-            
             ?>
+            <form method="POST" action="">
+                <input type="submit" id="delete "name="delete "class="button" value="Supprimer ce profil">
+            </form>
+            
+        
+            
         </section>
         <form action="./accueil.php">
             <input type="submit" value="Deconnexion" />

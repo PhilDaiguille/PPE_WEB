@@ -33,7 +33,9 @@ include_once("./page/header_inc.php");
     <main>
         <section>
             <h2>Prêt à la compétition ? Remplissez le formulaire proposé dans cette page</h2>
+
             <h3 class="bonjour">Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?></h3>
+            
             <p>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
             <ul class="grid-picture-large" aria-hidden="true">
@@ -80,7 +82,15 @@ include_once("./page/header_inc.php");
                     <h3>title</h3>
                     <p></p>
                     <time datetime="2022-03-20">Years :</time>
-                    <a href="./Inscrire.php">S'inscrire à l'évenements</a>
+                    <form method="POST">
+                        
+                        <?php 
+                            if(!empty($POST)){
+                                include_once "./page/AJoutEvenement.php";  
+                            }
+                        ?>
+                        <input type="submit" value="S'inscrire à l'évenement">
+                    </form>
                 </figcaption>
             </figure>
             <p class="valid"></p>

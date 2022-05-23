@@ -363,7 +363,6 @@ form *{
     width: 100%;
     margin-bottom: 1rem;
     padding: .9rem;
-	text-transform: capitalize;
 }
 fieldset{
 
@@ -429,9 +428,7 @@ form select option{
 	padding: 1rem 0rem;
 	border-radius: .5rem;
 }
-[placeholder]{
-    text-transform: capitalize;
-}
+
 main fieldset ul{
 	color: #fff;
 	display: flex;

@@ -2,5 +2,5 @@ package-lock.json
 package.json
 src/
 node_modules/
-
+SQL.text
 page/connect_BDD.php
