@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		let title = this.dataset.title;
 		let desc = this.dataset.description;
 		let dates = this.dataset.dates;
+		let id = this.dataset.id;
+		
 		modal.classList.add("modale-active"); /* ajouter la classe active */
 		/* sélectionner les sélecteurs html*/
 		document.querySelector(".modale img").setAttribute("src", image);
@@ -50,7 +52,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.querySelector(".modale .desc p").innerHTML = `<strong>Description : </strong>${desc}`;
 		document.querySelector(".modale .desc time").innerText = `Année : ${dates}`;
 		document.querySelector(".modale .desc time").setAttribute("datetime", dates);
+
+		let btn = document.querySelector("main .grid-picture-large");
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			let stateObj = { id: "100" };
+			window.history.pushState(stateObj, "PPE_WEB", "/PPE_WEB/Accueil_membre.php?id_event=" + id);
+		});
+
 	};
+	
 	for (rows of el) {
 		rows.addEventListener("click", open_modal);
 	}

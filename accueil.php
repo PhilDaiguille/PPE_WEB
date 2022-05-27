@@ -81,7 +81,7 @@ include_once("./page/header_inc.php");
                     <h3>title</h3>
                     <p></p>
                     <time datetime="2022-03-20">Years :</time>
-                    <a href="./Inscrire.php">S'inscrire à l'évenement</a>
+                    <a href="./formulaire.php">S'inscrire à l'évenement</a>
                 </figcaption>
             </figure>
         </div>

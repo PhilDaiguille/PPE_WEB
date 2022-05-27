@@ -63,11 +63,11 @@ include_once("./page/header_inc.php");
             <legend>Remplissez le formulaire</legend>
             <form method="post">
                 <label for="nom">nom</label>
-                <input type="text" id="nom" name="nom" placeholder="nom" aria-required="true" autofocus required>
+                <input type="text" id="nom" name="nom" placeholder="Nom" aria-required="true" autofocus required>
                 <label for="prenom">prénom</label>
-                <input type="text" id="prenom" name="prenom" placeholder="prénom" aria-required="true" required>
+                <input type="text" id="prenom" name="prenom" placeholder="Prénom" aria-required="true" required>
                 <label for="age">age</label>
-                <input type="number" id="age" name="age" placeholder="age" aria-required="true" required>  
+                <input type="number" id="age" name="age" placeholder="Age" aria-required="true" required>  
                 <label for="ville">Ville</label>
                 <select name="ville" id="ville" aria-required="true" required>
                     <option value="">- Choisissez la ville -</option>
@@ -84,7 +84,7 @@ include_once("./page/header_inc.php");
                 <label for="email">email</label>
                 <input type="email" id="email" name="email" placeholder="email" aria-required="true" required>
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="password" aria-required="true" required>
+                <input type="password" id="password" name="password" placeholder="Mot de passe ..." aria-required="true" required>
                 <input type="submit" value="Valider">
             </form>
         </fieldset>

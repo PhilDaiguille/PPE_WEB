@@ -49,7 +49,7 @@ include_once "./page/header_inc.php";
                 <input type="submit" id="delete "name="delete "class="button" value="Supprimer ce profil">
             </form>
             
-        
+            <?php include_once "./page/ListEvent_inc.php" ?>    
             
         </section>
         <form action="./accueil.php">

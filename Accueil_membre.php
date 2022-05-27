@@ -31,15 +31,35 @@ include_once("./page/header_inc.php");
         </a>
     </header>
     <main>
+        <?php
+            if(isset($_SESSION["id"]) && isset($_GET['id_event'])){
+                include_once "./page/connect_BDD.php";
+                $_date = new DateTime();
+                $_date = $_date->format('Y-m-d H:i:s'); 
+                print "L'id event : " . $_GET["id_event"] . " | l'id de la session : " . $_SESSION["id"] . " | la date : " . $_date;
+                try {
+                $_date = new DateTime();
+                $_date = $_date->format('Y-m-d H:i:s');
+                $_req = $_bdd->prepare('INSERT INTO historique_client(id_client, id_event, date_consultation) VALUES (:id_client, :id_event, :date_consultation)');
+                $_req->execute(array(
+                    'id_client' => $_SESSION['id'],
+                    'id_event' => $_GET['id_event'],
+                    'date_consultation' => $_date,
+                ));
+                print $_SESSION['id'] . $_GET['id_event'] . $_date;
+            } catch (Exception $e) {
+                die('Erreur : ' . $e->getMessage());
+            }
+        }
+        ?>    
         <section>
-            <h2>Prêt à la compétition ? Remplissez le formulaire proposé dans cette page</h2>
+            <h3 class="bonjour">Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?> ! Prêt à la compétition ?</h3>
 
-            <h3 class="bonjour">Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?></h3>
-            
             <p>Tous les mois profitez de toutes les nouveautés et opportunités. A partir du mois
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
             <ul class="grid-picture-large" aria-hidden="true">
                 <?php include_once "./page/connect_BDD.php" ?>
+                <?php /* include_once "./page/AJoutEvenement.php" */ ?>
                 <?php
                 try {
                     $request = "SELECT * FROM `evenement` ";
@@ -49,11 +69,12 @@ include_once("./page/header_inc.php");
 
                     foreach ($evenement as $event) {
                         echo
-                        '<li' . ' data-image=' . $event['image'] . ' data-title="' . $event['nom'] . '" ' 
-                        . 'data-description="' . $event['description'] 
-                        . '"' . ' data-dates="' . $event['date_creation']
-                        . '" >' 
-                             . '<figure>' . '<img src=' . $event['image'] . ' alt=' . $event['nom'] . " />"
+                        '<li' . ' data-image=' . $event['image'] . ' data-title="' . $event['nom'] . '" '
+                            . 'data-description="' . $event['description'] . '"'
+                            . 'data-id="' . $event['id_event']
+                            . '"' . ' data-dates="' . $event['date_creation']
+                            . '" >'
+                            . '<figure>' . '<img src=' . $event['image'] . ' alt=' . $event['nom'] . " />"
 
                             . '<figcaption>' . '<h2>' . '<span class="material-icons" aria-hidden="true"> ' . 'add' . '</span> ' . "En savoir" . '</h2>' . '</figcaption>'
 
@@ -65,9 +86,11 @@ include_once("./page/header_inc.php");
                 } catch (Exception $e) {
                     die('Erreur : ' . $e->getMessage());
                 }
-
+                
+                        
                 ?>
-
+                
+                
             </ul>
         </section>
 
@@ -82,13 +105,8 @@ include_once("./page/header_inc.php");
                     <h3>title</h3>
                     <p></p>
                     <time datetime="2022-03-20">Years :</time>
-                    <form method="POST">
-                        
-                        <?php 
-                            if(!empty($POST)){
-                                include_once "./page/AJoutEvenement.php";  
-                            }
-                        ?>
+                    
+                    <form method="post">
                         <input type="submit" value="S'inscrire à l'évenement">
                     </form>
                 </figcaption>

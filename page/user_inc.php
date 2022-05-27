@@ -5,7 +5,6 @@ try {
     $recipesStatement = $_bdd->prepare($sqlQuery);
     $recipesStatement->execute();
     $users = $recipesStatement->fetchAll();
-    
 } catch (Exception $e) {
     die('Erreur : ' . $e->getMessage());
 }
@@ -23,9 +22,9 @@ foreach ($users as $user) {
         echo
         '<ul>' .
             '<li>' . "Nom : " . $user['nom'] . '</li>' .
-            '<li>' . "Prénom : " . $user['prenom'] . '</li>'.
+            '<li>' . "Prénom : " . $user['prenom'] . '</li>' .
             '<li>' . "Age : " . $user['age'] . '</li>' .
-            '<li>' . "Ville : " . $user['ville'] . '</li>'.
+            '<li>' . "Ville : " . $user['ville'] . '</li>' .
             '<li>' . "Email : " . $user['email'] . '</li>' .
             '</ul>';
     }
