@@ -31,7 +31,6 @@ include_once "./page/header_inc.php";
             <h2>Information</h2>
             <?php include_once "./page/user_inc.php" ?>
             <a href="./ModifUser.php">Changer le profil</a>
-            <a href="#">Voir l'historique des évenements</a>
             <?php 
                 if (!empty($_POST)) {
                     include_once "./page/SupprimerProfil.php";
@@ -39,7 +38,7 @@ include_once "./page/header_inc.php";
                     if($request){
                         print "<p class=\"success\"> Votre compte a été supprimée</p>";
                         session_destroy();
-                        sleep(3);
+                        sleep(2);
                         header("Location: ./Accueil.php");
                     }
                     

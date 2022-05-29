@@ -44,6 +44,14 @@ select, input{
 select::-ms-expand {
     display: none;
 }
+/* COLORS */
+:root{
+	--default: #222;
+	--white: #fff;
+	--primary: #6a89cc;
+	--secondary: #4a69bd;
+	--tertiare: #1e3799;
+}
 /* HEADER */
 header{
     display: flex;
@@ -60,7 +68,7 @@ header h1{
     text-transform: capitalize;
 	border-radius: 1rem;
 	color: #fff;
-	background-color: var(--secondary);
+	background-color: var(--tertiare);
 }
 header ul{
 	display: inline-block;
@@ -120,14 +128,7 @@ header .compte .material-icons{
 .swish{
 	display:none;
 }
-/* COLORS */
-:root{
-	--default: #222;
-	--white: #fff;
-	--primary: #4a69bd;
-	--secondary: #1e3799;
-	--tertiare: #0c2461;
-}
+
 /* scroll bars */
 *{
     /* For FF and non-webkit browsers */
@@ -221,10 +222,10 @@ header .compte .material-icons{
 /*MAIN*/
 main{
 	margin: 0 auto;
-	max-width: 100rem;
+	max-width: 130rem;
 }
 main section{
-	max-width: 100rem;
+	max-width: 130rem;
 	margin: 2rem auto;
 }
 main section h2{
@@ -233,6 +234,7 @@ main section h2{
 	color: var(--white);
 }
 main section p{
+	max-width: 110rem;
 	text-align: center;
 	padding: 2rem;
 	border: solid .3rem var(--secondary);
@@ -277,6 +279,7 @@ main .error{
 	text-align: center;
 }
 main .userInfo{
+	max-width: 110rem;
 	display: block;
 	border-radius: .5rem;
 	padding: 1rem;
@@ -363,7 +366,7 @@ form *{
     padding: .9rem;
 }
 fieldset{
-
+	max-width: 110rem;
 	border-radius: .5rem;
 	box-shadow: rgba(0, 0, 0, 0.636) 0 0 3rem;
 	margin: 2rem auto;
@@ -483,7 +486,7 @@ main .grid-picture-large{
 	grid-template-columns: repeat(5, 1fr);
 	gap: 1rem;
 	margin: 0 auto;
-	max-width: 100rem;
+	max-width: 120rem;
 	border-radius: .5rem;
 }
 

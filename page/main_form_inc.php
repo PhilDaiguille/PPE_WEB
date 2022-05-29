@@ -23,7 +23,7 @@
                         $age = $_POST['age'];
                         $ville = $_POST['ville'];
                         $email = $_POST['email'];
-                        $mdp = $_POST['password'];
+                        $mdp = password_hash($_POST['password'], PASSWORD_BCRYPT);
         
                         $req = $_bdd->prepare('INSERT INTO client(nom, prenom, age, ville, email, password) VALUES(:nom, :prenom, :age, :ville, :email, :password)');
                         $req->execute(array(
@@ -34,7 +34,11 @@
                             'email' => $email,
                             'password' => $mdp,
                         ));
-        
+                        if($req){
+                            print "<p class=\"success\">Votre inscription a bien été prise en compte</p>";
+                            sleep(3);
+                            header("Location: ./Accueil.php");
+                        }
                         print "<p class=\"success\">Votre inscription a bien été prise en compte</p>";
                         
                     }

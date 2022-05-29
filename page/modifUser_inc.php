@@ -13,6 +13,7 @@ try {
             $_SESSION['prenom'] = $user['prenom'];
             $_SESSION['age'] = $user['age'];
             $_SESSION['ville'] = $user['ville'];
+            $_SESSION['email'] = $user['email'];
             $_SESSION['id'] = $user['id_client'];
         }
     }
