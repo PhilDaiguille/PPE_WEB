@@ -26,7 +26,7 @@ include_once("./page/header_inc.php");
                 account_circle
             </span>
         </a>
-        <a href="./accueil.php" class="deconnexion">
+        <a href="./" class="deconnexion">
             Deconnexion <span class="material-icons"> logout </span>
         </a>
     </header>
@@ -34,9 +34,6 @@ include_once("./page/header_inc.php");
         <?php
             if(isset($_SESSION["id"]) && isset($_GET['id_event'])){
                 include_once "./page/connect_BDD.php";
-                $_date = new DateTime();
-                $_date = $_date->format('Y-m-d H:i:s'); 
-                print "L'id event : " . $_GET["id_event"] . " | l'id de la session : " . $_SESSION["id"] . " | la date : " . $_date;
                 try {
                 $_date = new DateTime();
                 $_date = $_date->format('Y-m-d H:i:s');
@@ -46,9 +43,8 @@ include_once("./page/header_inc.php");
                     'id_event' => $_GET['id_event'],
                     'date_consultation' => $_date,
                 ));
-                print $_SESSION['id'] . $_GET['id_event'] . $_date;
             } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());
+                die('Erreur : ' . $e->getMessage());    
             }
         }
         ?>    
@@ -114,6 +110,7 @@ include_once("./page/header_inc.php");
             <p class="valid"></p>
         </div>
     </main>
+    <script src="./js/app_membre.js"></script>
     <?php
     include_once("./page/footer_inc.php");
     ?>

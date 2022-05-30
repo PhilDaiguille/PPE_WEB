@@ -34,11 +34,11 @@
                             'email' => $email,
                             'password' => $mdp,
                         ));
-                        if($req){
+                        /* if($req){
                             print "<p class=\"success\">Votre inscription a bien été prise en compte</p>";
                             sleep(3);
-                            header("Location: ./Accueil.php");
-                        }
+                             header("Location: ./"); }*/
+                         
                         print "<p class=\"success\">Votre inscription a bien été prise en compte</p>";
                         
                     }

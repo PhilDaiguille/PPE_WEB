@@ -142,83 +142,6 @@ header .compte .material-icons{
     background-color: #222;
     outline: .2rem solid rgb(255, 255, 255);
 }
-/* LOADED */
-
-/*ACCESSIBILITY*/
-.accessibility{
-	filter: contrast(1.5) grayscale(90%);
-}
-.light{
-	background-color: #fafafa;
-}
-.light main section ul li img{
-	display: block;
-	margin: 0rem auto;
-	border-radius: .5rem;
-	border: solid .2rem var(--default);
-	box-shadow: .1rem .1rem .8rem var(--default);
-}
-.light header ul{
-	margin: 0 2rem; 
-	background-color: var(--white);
-	border: solid .2rem var(--tertiare);
-	border-radius: 2rem;
-	padding: 1rem;
-}
-.light header{
-	background-color: #fefefe;
-	color: #000;
-}
-.light footer{
-	background-color: #fefefe;
-	color: #000;
-}
-.light header{
-	box-shadow: 0rem 0rem 1rem var(--default);
-}
-.light footer{
-	box-shadow: 0 0 1rem var(--default);
-}
-.light footer section ul li a{
-	color: #000;
-}
-.light header ul li{
-	margin: 0.5rem;
-}
-.light h2{
-	color: var(--default);
-}
-.light section ul figure figcaption h2{
-    color: #fff;
-}
-
-.light label{
-	display: block;
-	padding: 1rem 0rem;
-	text-shadow: none;
-	color: var(--default);
-	font-weight: bold;
-	font-size: 2rem;
-}
-.light input, .light select{
-	color: #222;
-	background-color: #fafafa;
-	
-}
-.light img{
-	border-radius: .5rem;
-
-}
-.light legend{
-	display: block;
-	margin: 0 auto;
-	color: var(--default);
-	text-shadow:none;
-	text-align: center;
-	font-weight: bold;
-	font-size: 2.5rem;	
-}
-
 /*MAIN*/
 main{
 	margin: 0 auto;
@@ -282,23 +205,27 @@ main .userInfo{
 	max-width: 110rem;
 	display: block;
 	border-radius: .5rem;
-	padding: 1rem;
+	padding: 1.5rem;
 	background-color: #333;
 }
 main .userInfo ul{
 	display: block;
 }
 main .userInfo a{
-	display: inline-block;
+	display: block;
 	color: #000;
 	text-align: center;
 	vertical-align: middle;
 	border-radius: .5rem;
 	border: solid .3rem var(--secondary);
 	margin: 1rem auto;
-	max-width: 50rem;
+	width: 100%;
 	background-color: #fafafa;
 
+}
+main .btnUser{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 main .userInfo .button{
 	color: #000;
@@ -727,6 +654,10 @@ footer p{
 		border: solid .2rem var(--tertiare);
 		border-radius: 2rem;
 		padding: 1rem;
+	}
+	main .btnUser{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
 	}
 	.light header ul li{
 		margin: 0 auto;

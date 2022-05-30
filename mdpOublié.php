@@ -4,7 +4,7 @@ include_once("./page/header_inc.php");
 
 <body>
     <header>
-        <a href="./accueil.php"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
+        <a href="./"><img src="./assets/1490877823-sport-badges06_82415.png" alt="streaming" /></a>
         <h1>Maison des ligues - tous les sports</h1>
         <ul>
             <li aria-hidden="true">

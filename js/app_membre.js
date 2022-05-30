@@ -1,33 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-	/*APP*/
-	console.log("charged");
-	let date = new Date();
-	let footer = document.querySelector("footer p");
-	let body = document.querySelector("body");
-
-	footer.innerText += ` ${date.getFullYear()}`;
-	/*ACCESSIBILITY*/
-	let btn1 = document.querySelector("header ul li:nth-child(1)");
-	let btn2 = document.querySelector("header ul li:nth-child(2)");
-
-	btn1.addEventListener("click", () => {
-		if (btn1.innerHTML === `<span class="material-icons">visibility</span>`) {
-			btn1.innerHTML = `<span class="material-icons">visibility_off</span>`;
-		} else {
-			btn1.innerHTML = `<span class="material-icons">visibility</span>`;
-		}
-		body.classList.toggle("accessibility");
-	});
-	btn2.addEventListener("click", () => {
-		if (btn2.innerHTML === `<span class="material-icons">light_mode</span>`) {
-			btn2.innerHTML = `<span class="material-icons">dark_mode</span>`;
-		} else {
-			btn2.innerHTML = `<span class="material-icons">light_mode</span>`;
-		}
-		body.classList.toggle("light");
-	});
-
-	let el, modal, closed, open_modal, closed_all;
+    let el, modal, closed, open_modal, closed_all;
 
 	el = document.querySelectorAll(".grid-picture-large li");
 	modal = document.querySelector(".parent-modale");
@@ -52,7 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 		document.querySelector(".modale .desc p").innerHTML = `<strong>Description : </strong>${desc}`;
 		document.querySelector(".modale .desc time").innerText = `Année : ${dates}`;
 		document.querySelector(".modale .desc time").setAttribute("datetime", dates);
-
+        let btn = document.querySelector("main .grid-picture-large");
+		btn.addEventListener("click", (e) => {
+			e.preventDefault();
+			window.history.pushState(1, "PPE_WEB", "/PPE_WEB/Accueil_membre.php?id_event=" + id);
+		});
 		
 
 	};
@@ -66,4 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	closed_all.addEventListener("click", () => {
 		modal.classList.remove("modale-active");
 	});
+    
+
 });
