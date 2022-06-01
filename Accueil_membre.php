@@ -1,7 +1,4 @@
 <?php
-
-/* Starting a session. */
-session_start();
 $_years = date("Y");
 ?>
 
@@ -32,11 +29,11 @@ include_once("./page/header_inc.php");
     </header>
     <main>
         <?php
-            print "L'id du client : " . $_SESSION['id_client'] . "<br>";
-            print "L'id du membre : " . $_GET['id_event'] . "<br>";
-            if(isset($_SESSION["id"]) && isset($_GET['id_event'])){
-                include_once "./page/connect_BDD.php";
-                try {
+        print "L'id du client : " . $_SESSION['id'] . "<br>";
+        print "L'id du membre : " . $_GET['id_event'] . "<br>";
+        if (isset($_SESSION["id"]) && isset($_GET['id_event'])) {
+            include_once "./page/connect_BDD.php";
+            try {
                 $_date = new DateTime();
                 $_date = $_date->format('Y-m-d H:i:s');
                 $_req = $_bdd->prepare('INSERT INTO historique_client(id_client, id_event, date_consultation) VALUES (:id_client, :id_event, :date_consultation)');
@@ -46,10 +43,10 @@ include_once("./page/header_inc.php");
                     'date_consultation' => $_date,
                 ));
             } catch (Exception $e) {
-                die('Erreur : ' . $e->getMessage());    
+                die('Erreur : ' . $e->getMessage());
             }
         }
-        ?>    
+        ?>
         <section>
             <h3 class="bonjour">Bonjour <?= $_SESSION['nom'] . " " . $_SESSION['prenom'] ?> ! Prêt à la compétition ?</h3>
 
@@ -84,11 +81,11 @@ include_once("./page/header_inc.php");
                 } catch (Exception $e) {
                     die('Erreur : ' . $e->getMessage());
                 }
-                
-                        
+
+
                 ?>
-                
-                
+
+
             </ul>
         </section>
 
@@ -103,7 +100,7 @@ include_once("./page/header_inc.php");
                     <h3>title</h3>
                     <p></p>
                     <time datetime="2022-03-20">Years :</time>
-                    
+
                     <form method="post">
                         <input type="submit" value="S'inscrire à l'évenement">
                     </form>
