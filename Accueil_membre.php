@@ -1,4 +1,5 @@
 <?php
+session_start();
 $_years = date("Y");
 ?>
 
