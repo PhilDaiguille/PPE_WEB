@@ -32,6 +32,8 @@ include_once("./page/header_inc.php");
     </header>
     <main>
         <?php
+            print "L'id du client : " . $_SESSION['id_client'] . "<br>";
+            print "L'id du membre : " . $_GET['id_event'] . "<br>";
             if(isset($_SESSION["id"]) && isset($_GET['id_event'])){
                 include_once "./page/connect_BDD.php";
                 try {
