@@ -30,25 +30,6 @@ include_once("./page/header_inc.php");
             <?php include_once "./page/connect_BDD.php";
                  include_once "./page/loginCompte.php";
             ?>
-            <?php
-            /* if(isset($_POST['login']) && isset($_COOKIE['PHPSESSID'])){
-                $_login = $_POST['login'];
-                if(!$_login){
-                    print '<section><p class="error">Remplir les champs</p></section>';
-                }
-                else{
-                $_SESSION['nom'] = $_login;
-                print '<section><p class="success">Bonjour : '.$_SESSION['nom'].'</p></section>';
-                print '<section>
-                            <a href="./Accueil_membre.php">Accéder à votre compte</a>
-                        </section>';
-              
-                }
-            }    */
-
-
-
-            ?>
             <fieldset>
                 <legend>
                     <h3>Veuillez vous connecter</h3>
@@ -66,7 +47,7 @@ include_once("./page/header_inc.php");
                 </form>
                 <ul>
                     <li><a href="./formulaire.php">Si vous n'avez pas de compte <span>s'inscrire</span></a></li>
-                    <li><a href="./mdpOublié.php">Mot de passe oublié ?</a></li>
+                    <!-- <li><a href="./mdpOublié.php">Mot de passe oublié ?</a></li> -->
                 </ul>
 
 
