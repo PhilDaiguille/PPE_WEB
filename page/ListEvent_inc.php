@@ -18,16 +18,16 @@ try {
 
 
 print '<table>' . '<th>' . "Nom de l'événement" . '</th>' . '<th>' . "Description de l'événement" . '</th>' . '<th>' . "Date de l'événement" . '</th>'. '<th>' . "Date de la consultation" . '</th>';
-foreach ($users as $user) {
-    if (isset($user['id_client']) == $_SESSION['id']) {
-        echo
-        '</tr>' .
-            '<tr>' . '<td>' . $user['nom'] . '</td>' . '<td>' 
-            . $user['description'] . '</td>' . '<td>'
-            . $user['date_consultation'] . '</td>' . '<td>' 
-            . $user['date_consultation'] . '</td>' ;
-            
+    foreach ($users as $user) {
+        if (isset($user['id_client']) == $_SESSION['id']) {
+            echo
+            '</tr>' .
+                '<tr>' . '<td>' . $user['nom'] . '</td>' . '<td>' 
+                . $user['description'] . '</td>' . '<td>'
+                . $user['date_consultation'] . '</td>' . '<td>' 
+                . $user['date_consultation'] . '</td>' ;
+                
+        }
     }
-}
 print '</tr> ' . ' </table>';
 ?>
