@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
+	window.history.pushState(1, "PPE_WEB", "/PPE_WEB/Accueil_membre.php");
+
     let el, modal, closed, open_modal, closed_all;
 
 	el = document.querySelectorAll(".grid-picture-large li");
 	modal = document.querySelector(".parent-modale");
 	closed = document.querySelector(".modale button");
 	closed_all = document.querySelector(".modale img");
-
+	
 	/* property elements */
 
 	open_modal = function () {
-		console.log(this.dataset);
 		/* les variables */
 		let image = this.dataset.image;
 		let title = this.dataset.title;
@@ -36,10 +37,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	for (rows of el) {
 		rows.addEventListener("click", open_modal);
 	}
+
 	closed.addEventListener("click", () => {
+		window.history.pushState(1, "PPE_WEB", "/PPE_WEB/Accueil_membre.php");
 		modal.classList.remove("modale-active");
 	});
+
 	closed_all.addEventListener("click", () => {
+		window.history.pushState(1, "PPE_WEB", "/PPE_WEB/Accueil_membre.php");
 		modal.classList.remove("modale-active");
 	});
     

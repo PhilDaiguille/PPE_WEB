@@ -381,13 +381,14 @@ main fieldset ul li a{
 }
 /* Tableau event */
 table{
+	display: block;
 	border-radius: .5rem .5rem 0 0;
 	margin: 1rem auto;
 	background-color: #333;
 	color: #fff;
 	max-width: 90rem;
 	text-align: center;
-	overflow-x: scroll;
+	overflow-x:auto;
 }
 table th{
 	padding: 1.5rem;
@@ -603,7 +604,7 @@ footer p{
     font-style: italic;
 }
 
-@media screen and (max-width: 60rem){
+@media screen and (max-width: 75rem){
 	header{
 		display: block;
 	}

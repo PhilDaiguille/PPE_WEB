@@ -37,7 +37,6 @@ include_once("./page/header_inc.php");
                 prochain on vous propose toutes les séance de sport sur vos support préférés</p>
             <ul class="grid-picture-large" aria-hidden="true">
                 <?php include_once "./page/connect_BDD.php" ?>
-                <?php /* include_once "./page/AJoutEvenement.php" */ ?>
                 <?php
                 try {
                     $request = "SELECT * FROM `evenement` ";
@@ -94,5 +93,5 @@ include_once("./page/header_inc.php");
     </main>
     <script src="./js/app_membre.js"></script>
     <?php
-    include_once("./page/footer_inc.php");
+    include_once("./page/footer_user_inc.php");
     ?>

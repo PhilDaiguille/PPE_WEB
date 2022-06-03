@@ -1,6 +1,6 @@
 <footer>
     <div class="caté">
-        <img src="https://cdn-icons-png.flaticon.com/512/4163/4163684.png" alt="Popcorn" />
+        <img src="https://cdn-icons-png.flaticon.com/512/4163/4163684.png" alt="AllSports" />
         <section>
             <h2>Tournois nationaux</h2>
             <ul>
@@ -30,7 +30,6 @@
         </section>
     </div>
     <p> &copy; Maison Ligues | Tous droits réservés - Philippe DELENTE | </p>
-
 </footer>
 
 </body>
